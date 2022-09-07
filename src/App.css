@@ -81,7 +81,7 @@
   .App-main p {
     font-size: 1.125rem;
     line-height: 1.75rem;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     width: 48%;
   }
 
@@ -90,6 +90,13 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     width: 60%;
+  }
+
+  .App-form-error {
+    color: var(--red);
+    font-size: 0.75rem;
+    grid-column-end: span 2;
+    margin-bottom: 2px;
   }
 
   .App-main input[type='text'] {
