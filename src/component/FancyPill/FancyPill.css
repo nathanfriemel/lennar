@@ -1,0 +1,22 @@
+.FancyPill {
+  align-items: center;
+  background: var(--black);
+  border-radius: 14px;
+  color: var(--font-color-white);
+  display: inline-flex;
+  flex-grow: 0;
+  font-size: 0.875rem;
+  padding: 4px;
+}
+
+.FancyPill span {
+  background: var(--blue);
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  margin-right: 16px;
+  padding: 2px 32px;
+  text-transform: uppercase;
+}

@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import Nav from './component/Nav';
+import FancyPill from './component/FancyPill';
+// import { ChevronRight, Illustration, Logo, Menu } from './svg';
 import './App.css';
 
+
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{backgroundImage: "url(/svg/illustration.svg)"}}>
+     <Nav />
+     <main className="App-main">
+      <FancyPill cta="Visit our careers page" href="/jobs" text="we're hiring" />
+      <h1>A better way to <span>ship web apps</span></h1>
+      <p>Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.</p>
+      <form className="App-form">
+        <input type="text" placeholder="Enter your email" />
+        <input type="submit" value="Start free trial" />
+        <p className="App-legal">Start your free 14-day trial, no credit card necessary. By providing your email, you agree to our <a href="/terms-of-service">terms or service</a>.</p>
+      </form>
+     </main>
     </div>
   );
 }
