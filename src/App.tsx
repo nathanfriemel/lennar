@@ -17,7 +17,7 @@ const CREATE_USER = gql`
 function App() {
   const [emailError, setEmailError] = useState(false);
   const inputElement = useRef<HTMLInputElement>(null);
-  const [createUser, { data, loading, error }] = useMutation(CREATE_USER);
+  const [createUser] = useMutation(CREATE_USER);
 
   const formHandler = useCallback(
     () => (event: SyntheticEvent) => {
@@ -25,7 +25,7 @@ function App() {
 
       const email = inputElement.current?.value || '';
 
-      if( /(.+)@(.+){2,}\.(.+){2,}/.test(email) ){
+      if ( /(.+)@(.+){2,}\.(.+){2,}/.test(email) ) { // simple email validation
         setEmailError(false);
         createUser({ variables: { input: { name: 'asdftwo', username: 'asdftwo', email } } });
 
