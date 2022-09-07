@@ -34,6 +34,12 @@
   display: block;
 }
 
+.App-form-error {
+  color: var(--red);
+  font-size: 0.75rem;
+  margin-bottom: 2px;
+}
+
 .App-main input {
   border: none;
   border-radius: 6px;
@@ -93,10 +99,7 @@
   }
 
   .App-form-error {
-    color: var(--red);
-    font-size: 0.75rem;
     grid-column-end: span 2;
-    margin-bottom: 2px;
   }
 
   .App-main input[type='text'] {

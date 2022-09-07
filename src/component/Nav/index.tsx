@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { useViewport } from '../../bin/hooks';
 import Button from '../Button';
@@ -21,18 +21,18 @@ const links = [
     name: "Company",
     href: '/company'
   }
-]
+];
 
 const Nav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { width } = useViewport(); // This is probably overkill to make the logo slightly bigger on > tablet
-  const closeMobileMenu = () => setMobileMenuOpen(false);
+  const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), [setMobileMenuOpen]);
 
   return (
     <nav className="Nav">
       <Logo height={width < tabpleBreakpoint ? 30 : 37} />
       <Menu onClick={() => setMobileMenuOpen(true)} className="Nav-menu" />
-      <MobileMenu isOpen={mobileMenuOpen} key="example" handleClose={closeMobileMenu} links={links} />
+      <MobileMenu isOpen={mobileMenuOpen} handleClose={closeMobileMenu} links={links} />
       <div className="Nav-links">
         {links.map(link => <a key={link.name} href={link.href} className="Nav-link">{link.name}</a>)}
       </div>
